@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL置換</title>
+  </head>
+  <body>
+    <label for="url-input">移動先URL:</label>
+    <input type="text" id="url-input" name="url-input">
+    <button onclick="goToUrl()">移動する</button>
+
+    <script>
+      function goToUrl() {
+        const urlInput = document.getElementById("url-input").value;
+        window.location.href = urlInput;
+      }
+    </script>
+  </body>
+</html>
