@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Processing</title>
+    <script>
+        function processNumber() {
+            // テキストボックスの値を取得
+            var inputNumber = document.getElementById("inputNumber").value;
+
+            // 入力が数字でない場合のエラーチェック
+            if (isNaN(inputNumber)) {
+                alert("有効な数値を入力してください。");
+                return;
+            }
+
+            // 結果を表示するためのエレメントを取得
+            var resultElement = document.getElementById("result");
+
+            // 繰り返し処理
+            while (inputNumber !== 1) {
+                if (inputNumber % 2 === 0) {
+                    // 偶数の場合
+                    inputNumber = inputNumber / 2;
+                } else {
+                    // 奇数の場合
+                    inputNumber = inputNumber * 3 + 1;
+                }
+
+                // 結果を表示
+                resultElement.innerHTML += inputNumber + "<br>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Processing</h1>
+    <label for="inputNumber">数値を入力してください:</label>
+    <input type="text" id="inputNumber">
+    <button onclick="processNumber()">処理開始</button>
+    <h2>処理結果:</h2>
+    <div id="result"></div>
+</body>
+</html>
