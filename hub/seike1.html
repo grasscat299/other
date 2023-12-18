@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BigInt Calculation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- ユーザー入力用のテキストボックスとボタン -->
+    <input type="text" id="inputNumber" placeholder="nの値を入力">
+    <button onclick="calculate()">計算</button>
+
+    <!-- 計算結果を表示するための領域 -->
+    <p>計算結果: <span id="result"></span></p>
+
+    <script>
+        function calculate() {
+            // テキストボックスから値を取得
+            var n = document.getElementById("inputNumber").value;
+
+            // 入力値が数値であることを確認
+            if (!isNaN(n) && n !== '') {
+                // BigIntを使って計算
+                var result = 47n * 2n ** BigInt(n) + 1n;
+                // 結果を表示
+                document.getElementById("result").innerText = result.toString();
+            } else {
+                // 不正な入力の場合はエラーメッセージを表示
+                document.getElementById("result").innerText = '有効な数値を入力してください。';
+            }
+        }
+    </script>
+</body>
+</html>
